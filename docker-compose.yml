@@ -36,6 +36,11 @@ services:
       PMA_HOST: db
       PMA_USER: root
       PMA_PASSWORD: root
+      UPLOAD_LIMIT: 2048M
+      PHP_UPLOAD_MAX_FILESIZE: 2048M
+      PHP_POST_MAX_SIZE: 2048M
+      PHP_MEMORY_LIMIT: 3G
+      PHP_MAX_EXECUTION_TIME: 600
     ports:
       - "8086:80"
     depends_on:
@@ -48,3 +53,4 @@ networks:
 
 volumes:
   dbdata:
+    external: true
